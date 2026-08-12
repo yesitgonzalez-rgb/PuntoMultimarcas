@@ -189,6 +189,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 .cart-note{font-size:.63rem;color:var(--gray);text-align:center;margin-top:7px}
 .toast{position:fixed;bottom:90px;right:18px;z-index:5000;background:var(--dark);color:#fff;padding:11px 16px;border-radius:10px;font-size:.8rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.25);transform:translateX(130%);transition:transform .3s;pointer-events:none;max-width:260px}
 .toast.show{transform:translateX(0)}
+#inicio,#deportiva,#salud,#gomitas,#fitness,#perfumeria,#naturales,#aseo{scroll-margin-top:80px}
 @media(max-width:768px){
   nav{display:none}.search-box{display:none}
   .brand-text p{display:none}
@@ -237,7 +238,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </head>
 <body>
 
-<header>
+<header id="inicio">
   <div class="header-inner">
     <div class="logo-area">
       <svg class="logo-svg" viewBox="0 0 100 100">
@@ -262,15 +263,15 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
       <div class="brand-text"><h1>Punto Multimarcas</h1><p>El Secreto de la Calidad</p></div>
     </div>
     <nav>
-      <a href="#" class="active">&#x1F3E0; Inicio</a>
-      <a href="#">&#x1F455; Linea Deportiva</a>
-      <a href="#" class="np">&#x1F33F; Salud</a>
-      <a href="#" class="np">&#x1F36C; Gomitas</a>
-      <a href="#" class="np">&#x1F4AA; Fitness</a>
-            <a href="#" class="np">&#x1F490; Perfumeria</a>
-      <a href="#" class="nn">&#x1F33F; Naturales</a>
-      <a href="#" class="na">&#x1F9F9; Aseo</a>
-      <a href="#">&#x1F4E6; Pedidos</a>
+      <a href="#inicio" class="active">&#x1F3E0; Inicio</a>
+      <a href="#deportiva">&#x1F455; Linea Deportiva</a>
+      <a href="#salud" class="np">&#x1F33F; Salud</a>
+      <a href="#gomitas" class="np">&#x1F36C; Gomitas</a>
+      <a href="#fitness" class="np">&#x1F4AA; Fitness</a>
+            <a href="#perfumeria" class="np">&#x1F490; Perfumeria</a>
+      <a href="#naturales" class="nn">&#x1F33F; Naturales</a>
+      <a href="#aseo" class="na">&#x1F9F9; Aseo</a>
+      <a href="#" onclick="openCart();return false;">&#x1F4E6; Pedidos</a>
     </nav>
     <div class="header-actions">
       <div class="search-box"><span>&#x1F50D;</span><input type="text" placeholder="Buscar..."></div>
@@ -327,7 +328,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
   <button class="slider-arrow arrow-prev" onclick="slideGo(-1)" aria-label="Anterior">&#x2039;</button>
   <button class="slider-arrow arrow-next" onclick="slideGo(1)" aria-label="Siguiente">&#x203A;</button>
   <div class="slider-dots" id="sliderDots"></div>
-  <div class="slide-counter" id="slideCounter">1 / 6</div>
+  <div class="slide-counter" id="slideCounter">1 / 7</div>
 </div>
 
 <div class="filter-bar">
@@ -341,7 +342,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
   </div>
 </div>
 
-<section class="catalog-section">
+<section class="catalog-section" id="deportiva">
   <div class="section-title">
     <h3>&#x1F455; Linea Deportiva</h3>
     <div class="line"></div>
@@ -427,7 +428,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Café Premium',0,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Café Premium',0,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa el Café Premium de Punto Multimarcas. ¿Cuánto cuesta? ☕')" style="flex:1;background:#6d3b00;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#6d3b00'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -444,7 +445,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Café Berry',80000,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Café Berry',80000,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa el Café Berry de Punto Multimarcas. ¿Cuánto cuesta? ☕')" style="flex:1;background:#6d3b00;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#6d3b00'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -461,7 +462,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Café Cordyceps',80000,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Café Cordyceps',80000,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa el Café Cordyceps de Punto Multimarcas. ¿Cuánto cuesta? ☕')" style="flex:1;background:#6d3b00;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#6d3b00'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -478,7 +479,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Café Arándano',95000,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Café Arándano',95000,'☕')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa el Café Arándano de Punto Multimarcas. ¿Cuánto cuesta? ☕')" style="flex:1;background:#6d3b00;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#6d3b00'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -489,7 +490,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </section>
 
 <!-- NATURALES PREMIUM -->
-<section class="catalog-section">
+<section class="catalog-section" id="naturales">
   <div class="section-title">
     <h3>&#x1F33F; Naturales Premium</h3>
     <div class="line"></div>
@@ -514,7 +515,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1.2rem;font-weight:900;color:#003087;display:block;margin-bottom:10px">$26.950 <small style="font-size:.6rem;color:#888;font-weight:500">COP</small></span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Jabón Aceite de Oliva & Miel',26950,'ðŸ«’')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Jabón Aceite de Oliva & Miel',26950,'🫒')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa el Jabón Aceite de Oliva & Miel de Punto Multimarcas. ¿Cuánto cuesta? 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -531,8 +532,8 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1.2rem;font-weight:900;color:#003087;display:block;margin-bottom:10px">$26.950 <small style="font-size:.6rem;color:#888;font-weight:500">COP</small></span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Jabón de Turmalina',26950,'ðŸ’Ž')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
-            <button onclick="goWS('Hola! Me interesa el Jabón de Turmalina de Punto Multimarcas. ¿Cuánto cuesta? ðŸ’Ž')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+            <button onclick="addProductCart('Jabón de Turmalina',26950,'💎')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Jabón de Turmalina de Punto Multimarcas. ¿Cuánto cuesta? 💎')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
       </div>
@@ -558,8 +559,8 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1.2rem;font-weight:900;color:#003087;display:block;margin-bottom:10px">$63.800 <small style="font-size:.6rem;color:#888;font-weight:500">COP</small></span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Smilife Shampoo Keratina',63800,'ðŸ’†')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
-            <button onclick="goWS('Hola! Me interesa el Smilife Shampoo Keratina & Turmalina de Punto Multimarcas. ¿Cuánto cuesta? ðŸ’†')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+            <button onclick="addProductCart('Smilife Shampoo Keratina',63800,'💆')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Smilife Shampoo Keratina & Turmalina de Punto Multimarcas. ¿Cuánto cuesta? 💆')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
       </div>
@@ -575,7 +576,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
         <div style="margin-top:auto">
           <span style="font-size:1.2rem;font-weight:900;color:#003087;display:block;margin-bottom:10px">$57.200 <small style="font-size:.6rem;color:#888;font-weight:500">COP</small></span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Smilife Gel de Baño Turmalina',57200,'🧴')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Smilife Gel de Baño Turmalina',57200,'🧴')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa el Smilife Gel de Baño Turmalina de Punto Multimarcas. ¿Cuánto cuesta? 🧴')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -596,13 +597,13 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
       <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="SLAIDERS/PASTA DELTAL/HERBAL.png" alt="Green World Herbs Fresh Mint" style="width:100%;height:100%;object-fit:contain">
       </div>
       <div style="padding:18px;flex:1;display:flex;flex-direction:column">
-        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">Pasta Dental Â· Herbal</span>
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">Pasta Dental · Herbal</span>
         <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Green World Herbs Fresh Mint</h3>
         <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Pasta herbal medicinal con xilitol y menta fresca. 100% natural. <strong>120 g.</strong></p>
         <div style="margin-top:auto">
           <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Green World Herbs Fresh Mint',0,'🦷')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Green World Herbs Fresh Mint',0,'🦷')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa la Pasta Dental Green World Herbs Fresh Mint de Punto Multimarcas. ¿Cuánto cuesta? 🦷')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -613,13 +614,13 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
       <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="SLAIDERS/PASTA DELTAL/TURMALINA B.png" alt="Pasta Dental Turmalina" style="width:100%;height:100%;object-fit:contain">
       </div>
       <div style="padding:18px;flex:1;display:flex;flex-direction:column">
-        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">Pasta Dental Â· Mineral</span>
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">Pasta Dental · Mineral</span>
         <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Pasta Dental de Turmalina</h3>
         <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Formulada con turmalina natural. Limpieza profunda, fortalece el esmalte y cuida las encías.</p>
         <div style="margin-top:auto">
           <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
           <div style="display:flex;gap:8px">
-            <button onclick="addProductCart('Pasta Dental de Turmalina',0,'🦷')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">ðŸ›’ Carrito</button>
+            <button onclick="addProductCart('Pasta Dental de Turmalina',0,'🦷')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">🛒 Carrito</button>
             <button onclick="goWS('Hola! Me interesa la Pasta Dental de Turmalina de Punto Multimarcas. ¿Cuánto cuesta? 🦷')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
@@ -698,7 +699,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </section>
 
 <!-- SALUD & BIENESTAR -->
-<section style="padding:28px 16px 32px;background:linear-gradient(180deg,#f0faf4 0%,#fff 100%)">
+<section id="salud" style="padding:28px 16px 32px;background:linear-gradient(180deg,#f0faf4 0%,#fff 100%)">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
     <span style="font-size:2rem">🌿</span>
     <div>
@@ -1207,7 +1208,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </section>
 
 <!-- GOMITAS -->
-<section style="padding:28px 16px 32px;background:linear-gradient(180deg,#fff8f0 0%,#fff 100%)">
+<section id="gomitas" style="padding:28px 16px 32px;background:linear-gradient(180deg,#fff8f0 0%,#fff 100%)">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
     <span style="font-size:2rem">🍬</span>
     <div>
@@ -1298,7 +1299,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </section>
 
 <!-- FITNESS -->
-<section style="padding:28px 16px 32px;background:linear-gradient(180deg,#f0f4ff 0%,#fff 100%)">
+<section id="fitness" style="padding:28px 16px 32px;background:linear-gradient(180deg,#f0f4ff 0%,#fff 100%)">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
     <span style="font-size:2rem">💪</span>
     <div>
@@ -1422,7 +1423,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </section>
 
 <!-- PERFUMERÍA PREMIUM -->
-<section class="catalog-section">
+<section class="catalog-section" id="perfumeria">
   <div class="section-title">
     <h3>&#x1F490; Perfumería Premium</h3>
     <div class="line"></div>
@@ -2020,7 +2021,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 </section>
 
 <!-- ASEO & HOGAR -->
-<section class="catalog-section">
+<section class="catalog-section" id="aseo">
   <div class="section-title">
     <h3>&#x1F9F9; Aseo & Hogar</h3>
     <div class="line"></div>
@@ -2240,7 +2241,21 @@ function setFilter(f,el){
   renderProducts();
 }
 function renderProducts(){
-  document.getElementById('productsGrid').innerHTML='';
+  var sizes = curFilter==='adulto' ? PROD.adulto : curFilter==='nino' ? PROD.nino : PROD.all;
+  var tags = Object.keys(sizes).map(function(s){return '<span class="size-tag">'+s+'</span>';}).join('');
+  document.getElementById('productsGrid').innerHTML =
+    '<div class="product-card" onclick="openModal()">'
+    +'<div class="product-image"><svg viewBox="0 0 140 160" width="100" height="114"><path d="M35 22L8 58L30 64L30 138L110 138L110 64L132 58L105 22L88 34Q70 44 52 34Z" fill="#FCD116"/><path d="M35 22L8 58L30 64L30 82L8 82L8 58Z" fill="#CE1126"/><path d="M105 22L132 58L110 64L110 82L132 82L132 58Z" fill="#CE1126"/><path d="M52 22Q70 12 88 22L88 34Q70 44 52 34Z" fill="#003087"/><text x="70" y="92" text-anchor="middle" font-size="8" font-weight="900" fill="#003087" opacity=".6">FCF</text></svg></div>'
+    +'<div class="product-info">'
+    +'<div class="product-ref">REF: COL-CAM-2024</div>'
+    +'<div class="product-name">Camiseta de la Tricolor 2024/25</div>'
+    +'<div class="product-sizes">'+tags+'</div>'
+    +'<div class="product-footer">'
+    +'<div class="product-price">'+fmt(85000)+'<small>IVA incluido</small></div>'
+    +'<button class="add-btn" onclick="event.stopPropagation();openModal()">Seleccionar Talla</button>'
+    +'</div></div></div>';
+  var count = document.getElementById('productCount');
+  if(count) count.textContent = curFilter==='adulto' ? 'Tallas Adulto (S-XXL)' : curFilter==='nino' ? 'Tallas Nino (T4-T14)' : 'Todas las tallas';
 }
 
 /* MODAL — botones de talla con onclick inline */
@@ -2358,7 +2373,7 @@ function sendOrder(){
   cart.forEach(function(item,i){
     lines.push('');
     lines.push((i+1)+'. '+(item.n||'Camiseta de la Tricolor'));
-    lines.push('   Ref: COL-CAM-2024');
+    if(!item.n) lines.push('   Ref: COL-CAM-2024');
     lines.push(item.n ? '   Cant: '+item.q : '   Talla: '+item.s+'  Cant: '+item.q);
     lines.push('   Subtotal: '+fmt(item.p*item.q));
   });
