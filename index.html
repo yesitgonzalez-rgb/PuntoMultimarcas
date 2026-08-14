@@ -22,18 +22,23 @@ nav a.np:hover{background:#8B008B}
 nav a.nn:hover{background:#2e7d32}
 nav a.na:hover{background:#0277BD}
 .header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.social-links{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.social-links .social-label{font-size:.72rem;font-weight:700;color:var(--gray);white-space:nowrap}
+.social-links a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--light);border:1.5px solid var(--border);transition:transform .15s,background .15s}
+.social-links a:hover{transform:translateY(-2px);background:#eef2ff}
+.social-links svg{width:16px;height:16px}
 .search-box{display:flex;align-items:center;gap:6px;background:var(--light);border:1.5px solid var(--border);border-radius:24px;padding:5px 12px}
 .search-box input{border:none;background:none;outline:none;font-size:.8rem;width:110px}
 .cart-btn{position:relative;background:var(--blue);color:#fff;border:none;border-radius:10px;padding:9px 16px;font-weight:700;display:flex;align-items:center;gap:5px;font-size:.85rem;transition:background .2s}
 .cart-btn:hover{background:var(--red)}
 .cart-badge{position:absolute;top:-6px;right:-6px;background:var(--red);color:#fff;border-radius:50%;width:20px;height:20px;font-size:.65rem;font-weight:700;display:none;align-items:center;justify-content:center}
-.hero-slider{position:relative;width:100%;height:480px;overflow:hidden;background:var(--dark)}
+.hero-slider{position:relative;width:100%;aspect-ratio:2.88/1;height:auto;overflow:hidden;background:var(--dark)}
 .slides-track{display:flex;height:100%;transition:transform .65s cubic-bezier(.4,0,.2,1);will-change:transform}
 .slide{min-width:100%;width:100%;height:100%;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .slide-1{background:linear-gradient(135deg,#001a5e,#003087,#001235)}
 .slide-2{background:linear-gradient(135deg,#001a5e,#002a70,#001235)}
 .slide-3{background:linear-gradient(135deg,#0d3b1a,#1b6b32,#051a0a)}
-.slide-img-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.slide-img-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center}
 .slide-content{position:relative;z-index:3;display:flex;align-items:center;gap:48px;padding:0 60px;width:100%;max-width:1200px}
 .slide-text{flex:1}
 .slide-flag{display:flex;height:5px;width:120px;border-radius:3px;overflow:hidden;margin-bottom:16px}
@@ -189,15 +194,15 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
 .cart-note{font-size:.63rem;color:var(--gray);text-align:center;margin-top:7px}
 .toast{position:fixed;bottom:90px;right:18px;z-index:5000;background:var(--dark);color:#fff;padding:11px 16px;border-radius:10px;font-size:.8rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.25);transform:translateX(130%);transition:transform .3s;pointer-events:none;max-width:260px}
 .toast.show{transform:translateX(0)}
-#inicio,#deportiva,#salud,#gomitas,#fitness,#perfumeria,#naturales,#aseo{scroll-margin-top:80px}
+#inicio,#arandanos,#salud,#mafloz,#gomitas,#fitness,#perfumeria,#naturales,#aseohogar,#aseo,#vehiculos{scroll-margin-top:80px}
 @media(max-width:768px){
-  nav{display:none}.search-box{display:none}
+  nav{display:none}.search-box{display:none}.social-links .social-label{display:none}
   .brand-text p{display:none}
   .header-inner{padding:8px 10px}
   .logo-svg{width:44px;height:44px}
   .brand-text h1{font-size:.88rem}
   .cart-btn{padding:9px 14px;font-size:.82rem}
-  .hero-slider{height:210px}
+  .hero-slider{aspect-ratio:2.88/1;height:auto}
   .slide-content{padding:0 10px;gap:10px}
   .slide-visual{display:none}
   .slide-text h2{font-size:1.1rem;margin-bottom:5px}
@@ -227,7 +232,7 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
   .bot-toggle{width:50px;height:50px}
 }
 @media(max-width:480px){
-  .hero-slider{height:180px}
+  .hero-slider{aspect-ratio:2.88/1;height:auto}
   .slide-text h2{font-size:.95rem}
   .slide-cta{padding:7px 14px;font-size:.72rem}
   .slider-arrow{width:30px;height:30px;font-size:1rem}
@@ -264,17 +269,28 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
     </div>
     <nav>
       <a href="#inicio" class="active">&#x1F3E0; Inicio</a>
-      <a href="#deportiva">&#x1F455; Linea Deportiva</a>
       <a href="#salud" class="np">&#x1F33F; Salud</a>
+      <a href="#mafloz" class="np">&#x1F33F; Mafloz</a>
       <a href="#gomitas" class="np">&#x1F36C; Gomitas</a>
       <a href="#fitness" class="np">&#x1F4AA; Fitness</a>
             <a href="#perfumeria" class="np">&#x1F490; Perfumeria</a>
       <a href="#naturales" class="nn">&#x1F33F; Naturales</a>
-      <a href="#aseo" class="na">&#x1F9F9; Aseo</a>
+      <a href="#aseohogar" class="na">&#x1F9F9; Aseo Hogar</a>
+      <a href="#aseo" class="na">&#x1F9F9; Aseo Industrial</a>
+      <a href="#vehiculos" class="na">&#x1F697; Vehículos</a>
       <a href="#" onclick="openCart();return false;">&#x1F4E6; Pedidos</a>
     </nav>
     <div class="header-actions">
       <div class="search-box"><span>&#x1F50D;</span><input type="text" placeholder="Buscar..."></div>
+      <div class="social-links">
+        <span class="social-label">Síguenos en Redes Sociales:</span>
+        <a href="https://www.facebook.com/share/19BHzqyBnf/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.8 8.44-4.95 8.44-9.94Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/julioantoniolobaton?igsh=dWxncG1jNGJmaGxi&utm_source=ig_contact_invite" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#E1306C" stroke="none"/></svg>
+        </a>
+      </div>
       <button class="cart-btn" onclick="openCart()">
         &#x1F6D2; Carrito
         <span class="cart-badge" id="cartBadge">0</span>
@@ -324,34 +340,31 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
       <div class="slide-ovbtn"><button onclick="goWS('Hola! Me interesa la coleccion Mafloz de Punto Multimarcas. 👕')" aria-label="Consultar Mafloz colección"></button></div>
     </div>
 
+    <div class="slide">
+      <img class="slide-img-bg" src="SLAIDERS/BICARBONATO ACTIVO.png" alt="3 en 1 Magistral - Oxígeno Activo, Bicarbonato de Sodio y Desengrasante" loading="lazy">
+      <div class="slide-ovbtn"><button onclick="goWS('Hola! Me interesa el combo 3 en 1 Magistral de Punto Multimarcas.')" aria-label="Consultar 3 en 1 Magistral"></button></div>
+    </div>
+
+    <div class="slide">
+      <img class="slide-img-bg" src="SLAIDERS/SILICONAS.png" alt="Silicona Emulsionada - Limpieza, Protección y Brillo" loading="lazy">
+      <div class="slide-ovbtn"><button onclick="goWS('Hola! Me interesa la Silicona Emulsionada de Punto Multimarcas.')" aria-label="Consultar Silicona Emulsionada"></button></div>
+    </div>
+
+    <div class="slide">
+      <img class="slide-img-bg" src="SLAIDERS/DESENGRASANTE.png" alt="AVAO Limpiador Desengrasante para Tapicería de Autos" loading="lazy">
+      <div class="slide-ovbtn"><button onclick="goWS('Hola! Me interesa el Desengrasante para Tapicería AVAO de Punto Multimarcas.')" aria-label="Consultar Desengrasante para Tapicería"></button></div>
+    </div>
+
   </div>
   <button class="slider-arrow arrow-prev" onclick="slideGo(-1)" aria-label="Anterior">&#x2039;</button>
   <button class="slider-arrow arrow-next" onclick="slideGo(1)" aria-label="Siguiente">&#x203A;</button>
   <div class="slider-dots" id="sliderDots"></div>
-  <div class="slide-counter" id="slideCounter">1 / 7</div>
+  <div class="slide-counter" id="slideCounter">1 / 10</div>
 </div>
 
-<div class="filter-bar">
-  <div class="filter-inner">
-    <span class="filter-label">Talla:</span>
-    <button class="chip active" onclick="setFilter('all',this)">Todas</button>
-    <button class="chip" onclick="setFilter('adulto',this)">Adulto (S-XXL)</button>
-    <button class="chip" onclick="setFilter('nino',this)">Nino (T4-T14)</button>
-    <span style="margin-left:auto;font-size:.74rem;color:var(--gray)">Precio: <strong style="color:var(--blue)">$85.000</strong></span>
-
-  </div>
-</div>
-
-<section class="catalog-section" id="deportiva">
-  <div class="section-title">
-    <h3>&#x1F455; Linea Deportiva</h3>
-    <div class="line"></div>
-    <span class="count" id="productCount">Todas las tallas</span>
-  </div>
-  <div class="products-grid" id="productsGrid"></div>
-
-  <!-- Galería Línea Deportiva Mundialista 2x2 -->
-  <div style="margin-top:40px;padding:20px 0">
+<section class="catalog-section" id="arandanos">
+  <!-- Galería Línea Arándanos HGW -->
+  <div style="padding:20px 0">
         <h3 style="font-size:1.3rem;font-weight:800;color:#1a1a2e;margin-bottom:30px">🫐 LÍNEA ARÁNDANOS HGW</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;max-width:100%">
 
@@ -690,6 +703,40 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
           <div style="display:flex;gap:8px">
             <button onclick="addProductCart('Anion Enjoyable Toalla Nocturna',0,'&#x1F319;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
             <button onclick="goWS('Hola! Me interesa la Anion Enjoyable Toalla Nocturna de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="PLANTILLAS/plantilla1.png" alt="HGW Plantillas de Turmalina" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9B6; Bienestar Plantar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">HGW Plantillas de Turmalina</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Bienestar para tus pies. Tela de alta calidad con fibra de carbón de bambú y piedra de turmalina. Alivio de dolor, soporte ergonómico y mejora la circulación. <strong>Contenido: 1 par.</strong></p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('HGW Plantillas de Turmalina',0,'&#x1F9B6;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesan las HGW Plantillas de Turmalina de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="PLANTILLAS/plantilla 2.png" alt="HGW Plantilla de Turmalina Ref. 2034" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9B6; Bienestar Plantar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">HGW Plantilla de Turmalina — Ref. 2034</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Confort, calidez y equilibrio. Tecnología de aniones que facilita el flujo de energías. Transpirable, fresca, durable y lavable. Unisex. <strong>Contenido: 1 par.</strong></p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('HGW Plantilla de Turmalina Ref. 2034',0,'&#x1F9B6;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa la HGW Plantilla de Turmalina Ref. 2034 de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
           </div>
         </div>
       </div>
@@ -1422,6 +1469,240 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
   </div>
 </section>
 
+<!-- LABORATORIOS MAFLOZ -->
+<section id="mafloz" style="padding:28px 16px 32px;background:linear-gradient(180deg,#f0faf4 0%,#fff 100%)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+    <span style="font-size:2rem">&#x1F33F;</span>
+    <div>
+      <h2 style="font-size:1.3rem;font-weight:900;color:#003087;margin:0;letter-spacing:.5px">LABORATORIOS MAFLOZ</h2>
+      <p style="font-size:.8rem;color:#555;margin:2px 0 0">Línea Originaturales · Coadyuvantes naturales indígenas</p>
+    </div>
+  </div>
+  <span class="count" style="display:inline-block;background:#003087;color:#fff;font-size:.7rem;font-weight:700;border-radius:20px;padding:3px 12px;margin-bottom:18px">20 referencias disponibles</span>
+  <div class="products-grid">
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ACIDO.png" alt="Anti Ácido Úrico Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Anti Ácido Úrico</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Previene y regula el ácido úrico · Alivia dolor articular · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Anti Ácido Úrico Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Anti Ácido Úrico Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/CANABIS.png" alt="Cannabis Quita Estrés Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Cannabis Quita Estrés</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Regula el sistema nervioso · Combate el insomnio · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Cannabis Quita Estrés Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Cannabis Quita Estrés Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/CANABIS.png" alt="Cannabis Quita Artritis Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Cannabis Quita Artritis</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Alivio natural, antiinflamatorio · Mejora la movilidad · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Cannabis Quita Artritis Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Cannabis Quita Artritis Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/CLOROFILA.png" alt="Clorofila 12 Extractos Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Clorofila 12 Extractos</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Depurador sanguíneo y antiinflamatorio · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Clorofila 12 Extractos Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Clorofila 12 Extractos Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/CONFIREY.png" alt="Con Frey Solanum Melongena Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Con Frey (Solanum Melongena)</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural altamente concentrado · Diurético, fortalece el organismo · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Con Frey Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Con Frey Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/D LEON.png" alt="Diente de León Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Diente de León</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Limpia y protege el hígado · Mejora la circulación · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Diente de León Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Diente de León Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ORTIGA.png" alt="Ortiga Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Ortiga</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Fortalece el cuerpo, cuida la piel · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Ortiga Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Ortiga Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/PLATA DE LA VIDA.png" alt="Planta de la Vida Lechero Africano Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Planta de la Vida — Lechero Africano</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Jarabe · Regenerador celular y neuronal · Energía y bienestar · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Planta de la Vida Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Planta de la Vida Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/SIETE GGUACOS.png" alt="7 Guacos Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">7 Guacos</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Alivio natural para articulaciones · Combate la artritis, fortalece los huesos</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('7 Guacos Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el 7 Guacos Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/TIROIDES.png" alt="Regulador de Tiroides Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Regulador de Tiroides</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Equilibra tus hormonas, apoya tu metabolismo · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Regulador de Tiroides Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Regulador de Tiroides Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/VIRAVIRA.png" alt="Viravira Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Viravira</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Salud masculina y femenina · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Viravira Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Viravira Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 13 jul 2026, 03_34_12 p.m..png" alt="Toro Vital Sangre de Toro Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Toro Vital — Sangre de Toro</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Tónico natural 2 en 1 · Energía, fuerza y vitalidad · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Toro Vital Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Toro Vital Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 13 jul 2026, 03_39_30 p.m..png" alt="Hemoglobina Ferroviloz 2 en 1 Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Hemoglobina Ferroviloz 2 en 1</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Aumenta glóbulos rojos, fortalece defensas · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Hemoglobina Ferroviloz Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Hemoglobina Ferroviloz Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 13 jul 2026, 03_43_16 p.m..png" alt="Mafloz Tónico Natural Elixir de la Vida" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Mafloz Tónico Natural — Elixir de la Vida</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Energía, vitalidad y bienestar · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Elixir de la Vida Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Elixir de la Vida Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 23 jul 2026, 09_03_20 p.m..png" alt="Calendu Fresh Suspensión de Caléndula Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Calendu Fresh — Suspensión de Caléndula</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Frescura pura · Alivia úlceras, combate la artritis · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Calendu Fresh Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Calendu Fresh Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 23 jul 2026, 09_05_40 p.m..png" alt="Ginkgo Biloba Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Ginkgo Biloba</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Coadyuvante natural · Mejora la circulación y la memoria · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Ginkgo Biloba Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Ginkgo Biloba Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 23 jul 2026, 09_09_37 p.m..png" alt="Vino Nutricerebral Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Vino Nutricerebral</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Alimento con vitaminas y minerales · Activa el cerebro y los sentidos</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Vino Nutricerebral Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Vino Nutricerebral Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 23 jul 2026, 09_12_11 p.m..png" alt="Riñofloz Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Riñofloz</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Limpieza y protección renal · Drenador desintoxicante · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Riñofloz Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa el Riñofloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 23 jul 2026, 09_15_30 p.m..png" alt="Caléndula Cicagel 2 en 1 Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Caléndula Cicagel 2 en 1</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · Gel oral · Antiséptico, cicatrizante y digestivo · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Caléndula Cicagel Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Caléndula Cicagel Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.10);background:#fff">
+      <img src="MAFLOZ/MAFLOZ 2/ChatGPT Image 23 jul 2026, 09_20_25 p.m..png" alt="Moringa Mafloz" style="width:100%;height:auto;display:block" loading="lazy">
+      <div style="padding:10px 8px 8px;display:flex;flex-direction:column;flex:1;gap:6px">
+        <h3 style="font-size:.88rem;font-weight:900;color:#1a1a2e;margin:0;line-height:1.3">Moringa</h3>
+        <p style="font-size:.72rem;color:#555;margin:0;flex:1;line-height:1.4">Mafloz · El original y eficaz · Antidepresivo natural, regenerador celular · 360 ml</p>
+        <div style="display:flex;gap:6px;margin-top:4px">
+          <button onclick="addProductCart('Moringa Mafloz',0,'🌿')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+          <button onclick="goWS('Hola! Me interesa la Moringa Mafloz de Punto Multimarcas. 🌿')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 6px;font-size:.75rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PERFUMERÍA PREMIUM -->
 <section class="catalog-section" id="perfumeria">
   <div class="section-title">
@@ -2020,14 +2301,445 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
   </div>
 </section>
 
-<!-- ASEO & HOGAR -->
+<!-- ASEO HOGAR -->
+<section class="catalog-section" id="aseohogar">
+  <div class="section-title">
+    <h3>&#x1F9F9; Aseo Hogar</h3>
+    <div class="line"></div>
+    <span class="count">12 referencias disponibles</span>
+  </div>
+  <div class="products-grid">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/LIMPIADOR MULTIUSOS.png" alt="Limpiador Multiusos" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Limpiador Multiusos</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Limpieza profunda para tu hogar. Frescura que se siente, elimina suciedad y grasa, aroma agradable.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Limpiador Multiusos',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Limpiador Multiusos de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/RMOVEDOR.png" alt="Removedor de Ceras" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Removedor de Ceras</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Elimina toda clase de cera y acumulación. Ideal para pisos de cerámica, mármol y porcelanato.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Removedor de Ceras',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Removedor de Ceras de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/DETERGENTE MULTIUSOS.png" alt="Desengrasante Multiusos" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Desengrasante Multiusos</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Poderoso contra la grasa, suciedad y manchas. Limpieza profunda para todas las superficies.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Desengrasante Multiusos',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Desengrasante Multiusos de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/LIMPIA VIDRIOS.png" alt="Limpia Vidrios" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Limpia Vidrios</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Simplemente transparente, brillo que se ve, limpieza que perdura. Multiusos interior y exterior, no deja marcas ni residuos.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Limpia Vidrios',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Limpia Vidrios de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/LAVALOSA.png" alt="Lavalosa Detergente" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Lavalosa Detergente</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Máxima eficiencia. Mayor rendimiento, espuma activa, aroma fresco. Limpia y desengrasa con brillo perfecto.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Lavalosa Detergente',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa la Lavalosa Detergente de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/JABON MANOS.png" alt="Jabón de Manos" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Jabón de Manos</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Para una vida más segura. Limpieza e innovación que protege tus manos. Uso en hogar, restaurantes, hoteles, colegios.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Jabón de Manos',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Jabón de Manos de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/SUAVISANTE.png" alt="Suavizante Sofí" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Suavizante Sofí</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Suavidad y frescura que se sienten, para ropa que merece el mejor cuidado. Aroma floral duradero.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Suavizante Sofí',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Suavizante Sofí de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/MAX BLANCO.png" alt="Max Blanco" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Max Blanco</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Blanquea y desinfecta, máxima pureza. Elimina el 99.9% de bacterias. Limpieza y desinfección que se nota.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Max Blanco',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Max Blanco de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/MAX COLOR.png" alt="Max Ropa Color" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Max Ropa Color</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Colores más vivos, ropa perfecta. Limpieza que cuida lo que más usas. Realza los colores, cuida las fibras.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Max Ropa Color',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Max Ropa Color de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/CLEAN.png" alt="Clean Detergente" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Clean Detergente</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Líquido para ropa. Limpieza profunda que cuida tu ropa. Poder Active, fórmula concentrada.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Clean Detergente',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Clean Detergente de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/DETERGENTE SOFI.png" alt="Sofi Detergente" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Sofi Detergente</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Líquido para ropa. Limpieza profunda que cuida tu ropa. Fórmula Active concentrada, espuma activa.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Sofi Detergente',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Sofi Detergente de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO HOGAR/BICARBONATO.png" alt="3 en 1 Magistral - Oxígeno Activo, Bicarbonato de Sodio y Desengrasante" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Hogar</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">3 en 1 Magistral</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Oxígeno Activo, Bicarbonato de Sodio y Desengrasante Multiusos. Limpia en profundidad, desinfecta y protege, desengrasa sin esfuerzo.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('3 en 1 Magistral',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el 3 en 1 Magistral de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASEO INDUSTRIAL -->
 <section class="catalog-section" id="aseo">
   <div class="section-title">
-    <h3>&#x1F9F9; Aseo & Hogar</h3>
+    <h3>&#x1F9F9; Aseo Industrial</h3>
     <div class="line"></div>
-    <span class="count">Productos de limpieza</span>
+    <span class="count">7 referencias disponibles</span>
   </div>
-  <div class="products-grid" id="productsGridAseo"></div>
+  <div class="products-grid">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/ACIDO.png" alt="Ácido Nítrico" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Ácido Nítrico</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Para limpieza de baños, azulejos y pisos. Poderoso limpiador, máxima eficacia.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Ácido Nítrico',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Ácido Nítrico de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/Anotación 2026-08-14 141214.png" alt="Alcohol Industrial 70%" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Alcohol Industrial 70%</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Desinfección que protege. Limpieza y pureza para cada superficie.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Alcohol Industrial 70%',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Alcohol Industrial 70% de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/CREOLINA.png" alt="Creolina Duo" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Creolina Duo</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Limpieza y desinfección profunda y efectiva. Elimina mugre, grasa y bacterias dejando un aroma agradable.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Creolina Duo',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa la Creolina Duo de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/DESENGRASANTE.png" alt="Desengrasante Industrial Biograsa" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Desengrasante Industrial Biograsa</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Poder y eficacia biodegradable para uso industrial. Fórmula concentrada, ideal para industrias y talleres.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Desengrasante Industrial Biograsa',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Desengrasante Industrial Biograsa de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/HIPOCLORITO.png" alt="Hipoclorito de Sodio al 15%" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Hipoclorito de Sodio al 15%</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Desinfectante, bactericida, algicida. Ideal para aguas y superficies. Uso industrial y comercial.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Hipoclorito de Sodio 15%',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Hipoclorito de Sodio al 15% de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/SELLADOR.png" alt="Sellador Polimérico" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Sellador Polimérico</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Protección y brillo duradero. Sella, protege y realza la belleza de tus superficies. Cera protectora antideslizante.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Sellador Polimérico',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Sellador Polimérico de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="ASEO INDUSTRIAL/VINAGRE.png" alt="Vinagre Industrial" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F9F9; Aseo Industrial</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Vinagre Industrial</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Limpieza efectiva, desinfección natural, multiusos. Fórmula natural y biodegradable.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Vinagre Industrial',0,'&#x1F9F9;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Vinagre Industrial de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEHÍCULOS -->
+<section id="vehiculos" style="padding:28px 16px 32px;background:linear-gradient(180deg,#f0f4fa 0%,#fff 100%)">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+    <span style="font-size:2rem">&#x1F697;</span>
+    <div>
+      <h2 style="font-size:1.3rem;font-weight:900;color:#003087;margin:0;letter-spacing:.5px">VEHÍCULOS</h2>
+      <p style="font-size:.8rem;color:#555;margin:2px 0 0">Siliconas y Desengrasantes Premium</p>
+    </div>
+  </div>
+  <span class="count" style="display:inline-block;background:#003087;color:#fff;font-size:.7rem;font-weight:700;border-radius:20px;padding:3px 12px;margin-bottom:18px">5 referencias disponibles</span>
+  <div class="products-grid">
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="CARROS/SILICONA.png" alt="Silicona Emulsionada" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F697; Cuidado Automotor</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Silicona Emulsionada</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Limpieza, protección y brillo. Disponible en varias presentaciones.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Silicona Emulsionada',0,'&#x1F697;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa la Silicona Emulsionada de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="CARROS/DISTRIBUIDORES.png" alt="AVAO Desengrasante para Tapicería" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F697; Cuidado Automotor</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">AVAO Desengrasante para Tapicería</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">Elimina manchas y restaura el color original. Fórmula biodegradable, no daña fibras ni costuras. Uso fácil y rápido, agradable aroma.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('AVAO Desengrasante para Tapicería',0,'&#x1F697;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el AVAO Desengrasante para Tapicería de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="CARROS/CREMA PARA BRILLAR.png" alt="Crema para Brillar y Polichar su Auto" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F697; Cuidado Automotor</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Crema para Brillar y Polichar su Auto</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">AVAO. Crema de alto brillo para carros, camionetas, motos, muebles y cueros. Limpia, brilla y protege. Con cera carnauba. Repele el polvo y el agua.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Crema para Brillar y Polichar su Auto',0,'&#x1F697;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa la Crema para Brillar y Polichar su Auto de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="CARROS/SHAMPOO AUTOS.png" alt="Shampoo Autos - Excelente Limpieza" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F697; Cuidado Automotor</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Shampoo Autos</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">AVAO. Fórmula avanzada que remueve la suciedad sin dañar la pintura, dejando un brillo espectacular.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Shampoo Autos',0,'&#x1F697;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Shampoo Autos de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.09);overflow:hidden;border:1.5px solid #e8f5e9;display:flex;flex-direction:column">
+      <div style="aspect-ratio:1/1;overflow:hidden;background:#f8f8f8"><img src="CARROS/AUTOS.png" alt="Shampoo Autos - Presentación 2" style="width:100%;height:100%;object-fit:contain">
+      </div>
+      <div style="padding:18px;flex:1;display:flex;flex-direction:column">
+        <span style="font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#2e7d32;background:#e8f5e9;padding:3px 8px;border-radius:12px;display:inline-block;width:fit-content;margin-bottom:8px">&#x1F697; Cuidado Automotor</span>
+        <h3 style="font-size:1rem;font-weight:900;color:#1a1a2e;margin-bottom:6px">Shampoo Autos (Presentación 2)</h3>
+        <p style="font-size:.8rem;color:#555;line-height:1.6;margin-bottom:12px;flex:1">AVAO. Fórmula avanzada que remueve la suciedad sin dañar la pintura, dejando un brillo espectacular.</p>
+        <div style="margin-top:auto">
+          <span style="font-size:1rem;font-weight:700;color:#888;display:block;margin-bottom:10px">Consultar precio</span>
+          <div style="display:flex;gap:8px">
+            <button onclick="addProductCart('Shampoo Autos Presentación 2',0,'&#x1F697;')" style="flex:1;background:#FCD116;color:#1a1a2e;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#ffe033'" onmouseout="this.style.background='#FCD116'">&#x1F6D2; Carrito</button>
+            <button onclick="goWS('Hola! Me interesa el Shampoo Autos de Punto Multimarcas. ¿Cuánto cuesta?')" style="flex:1;background:#003087;color:#fff;border:none;border-radius:10px;padding:9px 8px;font-size:.78rem;font-weight:700;cursor:pointer" onmouseover="this.style.background='#CE1126'" onmouseout="this.style.background='#003087'">&#x1F4AC; WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -2063,7 +2775,6 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
       <li>Bogota - Bosa Estacion</li>
     </ul></div>
     <div class="footer-col"><h5>Lineas</h5><ul>
-      <li>&#x1F455; Linea Deportiva</li>
       <li>&#x1F490; Perfumeria Premium</li>
       <li>&#x1F33F; Naturales Premium</li>
       <li>&#x1F9F9; Aseo Industrial</li>
@@ -2173,8 +2884,6 @@ var PROD={
 };
 PROD.all=Object.assign({},PROD.adulto,PROD.nino);
 var LINES=[
-  {k:'deportiva', i:'&#x1F455;', l:'Linea Deportiva',
-   m:'Tenemos la <strong>Camiseta de la Tricolor 2024/25</strong> a precio unico <strong>$85.000</strong>. Tallas adulto S M L XL XXL y nino T4 al T14.'},
   {k:'perfumeria',i:'&#x1F490;',l:'Perfumeria Premium',
    m:'Fragancias originales para el y para ella de las mejores marcas. Consultanos para precios.'},
   {k:'naturales', i:'&#x1F33F;',l:'Productos Naturales Premium',
@@ -2184,7 +2893,7 @@ var LINES=[
 ];
 var cart=[],selSize=null,qty=1,curFilter='all';
 var botOpen=false,botStarted=false;
-var slideIdx=0,NSLIDES=7,slideTimer=null;
+var slideIdx=0,NSLIDES=10,slideTimer=null;
 
 function goWS(msg){
   var u='https://wa.me/'+WS+'?text='+encodeURIComponent(msg);
@@ -2444,7 +3153,6 @@ window.addEventListener('load',function(){
   buildDots();
   updSlider();
   slideTimer=setInterval(function(){slideGo(1);},5000);
-  renderProducts();
   initSwipe();
   setTimeout(function(){if(!botStarted&&!botOpen)toggleBot();},4000);
 });
