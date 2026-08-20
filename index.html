@@ -67,6 +67,25 @@ nav a.na:hover{background:#0277BD}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);transition:all .3s;border:none;padding:0}
 .dot.active{background:#fff;width:24px;border-radius:4px}
 .slide-counter{position:absolute;top:12px;right:14px;z-index:50;color:rgba(255,255,255,.8);font-size:.72rem;font-weight:700;background:rgba(0,0,0,.35);padding:2px 8px;border-radius:10px}
+
+/* ASESORÍA EN SALUD - franja marquee */
+.health-strip{position:relative;width:100%;overflow:hidden;background:linear-gradient(90deg,var(--blue),#00308c 50%,var(--blue));border-top:3px solid var(--yellow);border-bottom:3px solid var(--yellow);cursor:pointer}
+.health-strip:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+.health-track{display:flex;width:max-content;white-space:nowrap;animation:health-scroll 24s linear infinite}
+.health-strip:hover .health-track{animation-play-state:paused}
+.health-item{display:inline-flex;align-items:center;padding:13px 0;font-size:.9rem;font-weight:700;color:#fff;letter-spacing:.2px}
+.health-item strong{color:var(--yellow)}
+.health-sep{margin:0 22px;color:rgba(255,255,255,.5)}
+@keyframes health-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:768px){
+  .health-item{font-size:.8rem;padding:12px 0}
+  .health-sep{margin:0 14px}
+  .health-track{animation-duration:18s}
+}
+@media(prefers-reduced-motion:reduce){
+  .health-track{animation:none}
+  .health-track .health-item[aria-hidden="true"]{display:none}
+}
 .filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:10px 16px}
 .filter-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .filter-label{font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px}
@@ -360,6 +379,13 @@ footer{background:var(--dark);color:#fff;padding:36px 16px 20px}
   <button class="slider-arrow arrow-next" onclick="slideGo(1)" aria-label="Siguiente">&#x203A;</button>
   <div class="slider-dots" id="sliderDots"></div>
   <div class="slide-counter" id="slideCounter">1 / 10</div>
+</div>
+
+<div class="health-strip" role="button" tabindex="0" aria-label="Asesoría en salud, agenda tu cita sin costo por WhatsApp al 312 369 3318" onclick="goWS('Hola, quiero agendar una cita de asesoría en salud sin costo.')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+  <div class="health-track">
+    <span class="health-item">🩺 <strong>ASESORÍA EN SALUD</strong> — Agenda tu cita sin costo<span class="health-sep">•</span>📲 WhatsApp 312 369 3318<span class="health-sep">•</span>💬 AGENDAR CITA<span class="health-sep">•</span></span>
+    <span class="health-item" aria-hidden="true">🩺 <strong>ASESORÍA EN SALUD</strong> — Agenda tu cita sin costo<span class="health-sep">•</span>📲 WhatsApp 312 369 3318<span class="health-sep">•</span>💬 AGENDAR CITA<span class="health-sep">•</span></span>
+  </div>
 </div>
 
 <section class="catalog-section" id="arandanos">
@@ -3122,11 +3148,21 @@ function addBotMsg(h,isUser){
 function showBotMenu(){
   var o=document.getElementById('botOpts');
   var h='<div class="bot-opt-lbl">Selecciona una linea:</div>';
+  h+='<button class="bot-opt" onclick="botSalud()">&#x1FA7A; Asesoría en Salud</button>';
   LINES.forEach(function(ln,idx){
     h+='<button class="bot-opt" onclick="botLine('+idx+')">'+ln.i+' '+ln.l+'</button>';
   });
   h+='<button class="bot-opt" onclick="botOther()">&#x2753; Otra consulta</button>';
   o.innerHTML=h;
+}
+function botSalud(){
+  addBotMsg('&#x1FA7A; Asesoría en Salud',true);
+  setTimeout(function(){
+    addBotMsg('¿Quieres agendar una cita de asesoría en salud sin costo?');
+    document.getElementById('botOpts').innerHTML=
+      '<button class="bot-ws" onclick="goWS(\'Hola, quiero agendar una cita de asesoría en salud sin costo.\')">&#x1F4AC; Agendar cita por WhatsApp</button>'
+      +'<button class="bot-back" onclick="addBotMsg(\'En que mas te puedo ayudar?\');showBotMenu()">&#x2190; Volver</button>';
+  },400);
 }
 function botLine(idx){
   var ln=LINES[idx];
